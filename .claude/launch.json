@@ -4,8 +4,12 @@
     {
       "name": "portfolio-prototype",
       "runtimeExecutable": "python",
-      "runtimeArgs": ["-m", "http.server", "5174"],
-      "port": 5174
+      "runtimeArgs": [
+        "-c",
+        "import http.server, os; http.server.test(HandlerClass=http.server.SimpleHTTPRequestHandler, port=int(os.environ.get('PORT', 5174)))"
+      ],
+      "port": 5174,
+      "autoPort": true
     }
   ]
 }
